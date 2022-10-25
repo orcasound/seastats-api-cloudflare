@@ -1,0 +1,1184 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2024-09-20T23:14:01.328Z",
+    "__export_source": "insomnia.desktop.app:v9.2.0",
+    "resources": [
+        {
+            "_id": "req_3c774cbb6f2e41529491820b7cc6a480",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1726595981869,
+            "created": 1680030865674,
+            "url": "{{ _.HOST }}/api/v1/data/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}",
+            "name": "Data Points",
+            "description": "Note that this end point has optional filtering parameters that can be enabled",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [
+                {
+                    "name": "dataPointType",
+                    "value": "callRate",
+                    "id": "pair_6426164d1d91435a869db1302f2642ac",
+                    "disabled": true
+                },
+                {
+                    "name": "dataPointType",
+                    "value": "callEvent",
+                    "id": "pair_0d331ab42d244286b006e352506c7043",
+                    "disabled": true
+                },
+                {
+                    "name": "dataPointType",
+                    "value": "recordingCoverage",
+                    "id": "pair_70363bfdeff348cf8ee1e398873d9658",
+                    "disabled": true
+                },
+                {
+                    "name": "dataPointType",
+                    "value": "noise",
+                    "id": "pair_747ac7ef0ba249b18f014720cb83cf2a",
+                    "disabled": true
+                },
+                {
+                    "name": "dataPointType",
+                    "value": "exceedance",
+                    "id": "pair_eb29d07f4123459c88757335ae19188f",
+                    "disabled": true
+                },
+                {
+                    "name": "fromDate",
+                    "value": "2021-01-03",
+                    "id": "pair_94d8ffc721e246ef8d98aa73bbd137fd",
+                    "disabled": true
+                },
+                {
+                    "name": "toDate",
+                    "value": "2021-01-03",
+                    "id": "pair_0ef8df7f87f54cf9b09691afdd660ec9",
+                    "disabled": true
+                },
+                {
+                    "name": "band",
+                    "value": "10-100 Hz",
+                    "id": "pair_9ee58e8bc958458da8dfdaeba50495f4",
+                    "disabled": true
+                },
+                {
+                    "name": "band",
+                    "value": "100-1000 Hz",
+                    "id": "pair_9a19ff4adb394772844766edb760eb3b",
+                    "disabled": true
+                },
+                {
+                    "name": "threshold",
+                    "value": "90 dB",
+                    "id": "pair_57d6b25b3eaf46dca63a108bfb89d9ef",
+                    "disabled": true
+                },
+                {
+                    "name": "threshold",
+                    "value": "100 dB",
+                    "id": "pair_d3f662b9dcfa44f2a1f468fa4c659ca7",
+                    "disabled": true
+                },
+                {
+                    "name": "species",
+                    "value": "Orca",
+                    "id": "pair_271148e0942940ee8c6426e9a7573331",
+                    "disabled": true
+                },
+                {
+                    "name": "species",
+                    "value": "Humpback",
+                    "id": "pair_5c9839974a114c26912b863731592379",
+                    "disabled": true
+                },
+                {
+                    "name": "callType",
+                    "value": "Call",
+                    "id": "pair_e12b303d86844c8ba1e470119c194e13",
+                    "disabled": true
+                },
+                {
+                    "name": "callType",
+                    "value": "Social",
+                    "id": "pair_bf4640561f4345e4a9592dc3eb3fd004",
+                    "disabled": true
+                }
+            ],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666991132844,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_22860373a94c41a097a3638f5f319899",
+            "parentId": "wrk_384d8200299143ebb307cca0cdcf3509",
+            "modified": 1680030865674,
+            "created": 1680030865674,
+            "name": "Public",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1666991117658,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_384d8200299143ebb307cca0cdcf3509",
+            "parentId": null,
+            "modified": 1726873983317,
+            "created": 1685807671915,
+            "name": "SeaStats Dashboard API",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_d661af3a66dc4857b464700b3a85520b",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1726595985661,
+            "created": 1680030865676,
+            "url": "{{ _.HOST }}/api/v1/organization/{{ _.ORGANIZATION_KEY }}",
+            "name": "Organization",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666991132744,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_8f87dd6914d0404c90ce8e964051f2fd",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1681170304522,
+            "created": 1680030865676,
+            "url": "{{ _.HOST }}/api/v1/organizations",
+            "name": "Organizations",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666899750301,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_9abde44fe491461f8c08a121ff3978d0",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1726593934072,
+            "created": 1680030865677,
+            "url": "{{ _.HOST }}/api/v1/station/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}",
+            "name": "Station",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666899750251,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_7e2877eea49e41a889369c5dd163b36f",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1709340807490,
+            "created": 1680030865678,
+            "url": "{{ _.HOST }}/api/v1/stations",
+            "name": "Stations",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666854059054.5,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_d06d2af726ae47158d71f2af28cc6512",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1726595992667,
+            "created": 1680030865679,
+            "url": "{{ _.HOST }}/api/v1/summary",
+            "name": "Summary",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666854059004.5,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c0879772d0184c91ac4ea43094d7bbf8",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1682700979929,
+            "created": 1682700969448,
+            "url": "{{ _.HOST }}/dashboard.js",
+            "name": "Embed script",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666854058979.5,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_d8ad386ce4944f5fb381e536b6704743",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1726595508785,
+            "created": 1680030865671,
+            "url": "{{ _.HOST }}/api/v1/station-upload/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}/test/test-01.png",
+            "name": "Station Upload",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666854058954.5,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c7de10d7921043f7a4e2ee8dda220c6d",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1726595529679,
+            "created": 1685806229375,
+            "url": "{{ _.HOST }}/api/v1/organization-upload/{{ _.ORGANIZATION_KEY }}/test/test-01.png",
+            "name": "Organization Upload",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666854058929.5,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_09b4be13e5944a7db9333abd62250f57",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1726595389622,
+            "created": 1680062309155,
+            "url": "{{ _.HOST }}/api/v1/station-uploads/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}",
+            "name": "Station Uploads",
+            "description": "Note that this end point has optional filtering parameters that can be enabled",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [
+                {
+                    "name": "uploadType",
+                    "value": "ltsa-1d",
+                    "id": "pair_62eff1a569a145558d5bb3daab427f19",
+                    "disabled": true
+                },
+                {
+                    "name": "uploadType",
+                    "value": "spd-1m",
+                    "id": "pair_cfaeaa690f0d4a388bce691acfaf827b",
+                    "disabled": true
+                },
+                {
+                    "name": "uploadType",
+                    "value": "audio",
+                    "id": "pair_e6e214e3602b4cb08f99d0d263f4bda3",
+                    "disabled": true
+                }
+            ],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666854058904.5,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_afdf3eeec1f4492e98ab03ec81c1e631",
+            "parentId": "fld_22860373a94c41a097a3638f5f319899",
+            "modified": 1726593991535,
+            "created": 1685805813185,
+            "url": "{{ _.HOST }}/api/v1/organization-uploads/{{ _.ORGANIZATION_KEY }}",
+            "name": "Organization Uploads",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": true
+            },
+            "metaSortKey": -1666842636177.25,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ede63e69ef0d403aa0fb275841581b4a",
+            "parentId": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "modified": 1726594011316,
+            "created": 1680030865669,
+            "url": "{{ _.HOST }}/api/v1/station/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}",
+            "name": "Station",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Test Station 01\",\n\t\"latitude\": 50.600408,\n\t\"longitude\": -126.708070,\n\t\"timeZone\": \"America/Vancouver\",\n\t\"logoUrl\": null,\n\t\"sidebarText\": [\n\t\t{\n\t\t\t\"label\": \"Region\",\n\t\t\t\"text\": \"Upper cuts\"\n\t\t},\n\t\t{\n\t\t\t\"label\": \"Species\",\n\t\t\t\"text\": \"Fin, Orca\"\n\t\t},\n\t\t{\n\t\t\t\"label\": \"\",\n\t\t\t\"text\": \"🐋\"\n\t\t}\n\t],\n\t\"metadata\": {\n\t\t\"anything\": 10,\n\t\t\"you\": false,\n\t\t\"like\": [\n\t\t\t\"can\",\n\t\t\t\"be saved\",\n\t\t\t{\n\t\t\t\t\"in\": \"metadata\"\n\t\t\t}\n\t\t]\n\t}\n}"
+            },
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1666808367845.5,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "parentId": "wrk_384d8200299143ebb307cca0cdcf3509",
+            "modified": 1680030865666,
+            "created": 1680030865666,
+            "name": "User",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1666991108844,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_1f36d2a0fdff4e56a00c68bbda4996e7",
+            "parentId": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "modified": 1726594016717,
+            "created": 1680030865670,
+            "url": "{{ _.HOST }}/api/v1/station/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}",
+            "name": "Station",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1666808367836.125,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_8e1fe16f25284396b84b47e5b669521c",
+            "parentId": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "modified": 1726594021042,
+            "created": 1680030865666,
+            "url": "{{ _.HOST }}/api/v1/data/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}",
+            "name": "Data Points",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "[\n  {\n    \"dataPointType\": \"callRate\",\n    \"species\": \"Orca\",\n    \"callType\": \"Social\",\n    \"date\": \"2021-01-03\",\n    \"value\": 0\n  },\n  {\n    \"dataPointType\": \"callRate\",\n    \"species\": \"Humpback\",\n    \"callType\": \"Bubble-net feeding\",\n    \"date\": \"2021-01-03\",\n    \"value\": null\n  },\n  {\n    \"dataPointType\": \"callEvent\",\n    \"species\": \"Humpback\",\n    \"callType\": \"Bubble-net feeding\",\n    \"startDateTime\": \"2021-01-03T21:39:46.450Z\",\n    \"endDateTime\": \"2021-01-03T21:44:53.900Z\",\n    \"callCount\": 20\n  },\n  {\n    \"dataPointType\": \"callEvent\",\n    \"species\": \"Humpback\",\n    \"callType\": \"Bubble-net feeding\",\n    \"startDateTime\": \"2021-01-03T18:27:05.200Z\",\n    \"endDateTime\": \"2021-01-03T18:40:20.950Z\",\n    \"callCount\": 47\n  },\n  {\n    \"dataPointType\": \"recordingCoverage\",\n    \"date\": \"2021-01-03\",\n    \"value\": 0.16527777777777777\n  },\n  {\n    \"dataPointType\": \"noise\",\n    \"band\": \"10-100 Hz\",\n    \"date\": \"2021-01-03\",\n    \"value\": 101.4493593\n  },\n  {\n    \"dataPointType\": \"noise\",\n    \"band\": \"100-1000 Hz\",\n    \"date\": \"2021-01-03\",\n    \"value\": 98.43086986\n  },\n  {\n    \"dataPointType\": \"exceedance\",\n    \"band\": \"10-100 Hz\",\n    \"threshold\": \"90 dB\",\n    \"date\": \"2021-01-03\",\n    \"value\": 0.98828125\n  },\n  {\n    \"dataPointType\": \"exceedance\",\n    \"band\": \"10-100 Hz\",\n    \"threshold\": \"100 dB\",\n    \"date\": \"2021-01-03\",\n    \"value\": 0.7142857142857143\n  },\n  {\n    \"dataPointType\": \"exceedance\",\n    \"band\": \"100-1000 Hz\",\n    \"threshold\": \"90 dB\",\n    \"date\": \"2021-01-03\",\n    \"value\": 0.0101237345331\n  },\n  {\n    \"dataPointType\": \"exceedance\",\n    \"band\": \"100-1000 Hz\",\n    \"threshold\": \"100 dB\",\n    \"date\": \"2021-01-03\",\n    \"value\": 0.58605174353\n  }\n]"
+            },
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_8a5fbb61c38642168a69ffb91bafca18"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1666808367826.75,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_d98f240b32ef491785b5f2c3a2456bee",
+            "parentId": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "modified": 1726595249000,
+            "created": 1680030865667,
+            "url": "{{ _.HOST }}/api/v1/data/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}",
+            "name": "Data Points",
+            "description": "Caution: Make sure to use the optional filter parameters if you don't want to delete everything!",
+            "method": "DELETE",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [
+                {
+                    "name": "dataPointType",
+                    "value": "callRate",
+                    "id": "pair_29c575ba33f246069d891799fe8d6e70",
+                    "disabled": true
+                },
+                {
+                    "name": "dataPointType",
+                    "value": "callEvent",
+                    "id": "pair_015a8bee393f4f3b86706f4821bd0fb1",
+                    "disabled": true
+                },
+                {
+                    "name": "dataPointType",
+                    "value": "recordingCoverage",
+                    "id": "pair_2498534f2d544651964471c0ac0ca7b4",
+                    "disabled": true
+                },
+                {
+                    "name": "dataPointType",
+                    "value": "noise",
+                    "id": "pair_17c27f29d7384a4ab8999c8cf828b07a",
+                    "disabled": true
+                },
+                {
+                    "name": "dataPointType",
+                    "value": "exceedance",
+                    "id": "pair_2eea3cfe167841febabec41cc7760fa3",
+                    "disabled": true
+                },
+                {
+                    "name": "fromDate",
+                    "value": "2000-01-01",
+                    "id": "pair_005938b802b34f498cbbaf6db1f9ca4e",
+                    "disabled": false
+                },
+                {
+                    "name": "toDate",
+                    "value": "2000-01-01",
+                    "id": "pair_227593956fe34a789f0851350130fce7",
+                    "disabled": false
+                },
+                {
+                    "name": "band",
+                    "value": "10-100 Hz",
+                    "id": "pair_9dc423b1ae654958a94e0ece75424ee7",
+                    "disabled": true
+                },
+                {
+                    "name": "band",
+                    "value": "100-1000 Hz",
+                    "id": "pair_5d22f84437e640b79bb207c88cabf328",
+                    "disabled": true
+                },
+                {
+                    "name": "threshold",
+                    "value": "90 dB",
+                    "id": "pair_7bdce9311f5f49ebb57d5900cc500fbc",
+                    "disabled": true
+                },
+                {
+                    "name": "threshold",
+                    "value": "100 dB",
+                    "id": "pair_45f545a500d5424a91e4cf7f29476be3",
+                    "disabled": true
+                },
+                {
+                    "name": "species",
+                    "value": "Orca",
+                    "id": "pair_f6cbdd0f5ad34109be5e022e2c98fe76",
+                    "disabled": true
+                },
+                {
+                    "name": "species",
+                    "value": "Humpback",
+                    "id": "pair_0ca5ccfdc97440c58ca2cc531baf5aaf",
+                    "disabled": true
+                },
+                {
+                    "name": "callType",
+                    "value": "Call",
+                    "id": "pair_e58c453566ba45a088363caaa83524b4",
+                    "disabled": true
+                },
+                {
+                    "name": "callType",
+                    "value": "Social",
+                    "id": "pair_1bebc69827be4a48ab859c3cc3961e2a",
+                    "disabled": true
+                }
+            ],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1666808367808,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_d69968191ca246b1877d5ff0a4f49f86",
+            "parentId": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "modified": 1726595495504,
+            "created": 1680030865668,
+            "url": "{{ _.HOST }}/api/v1/station-upload/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}/test/test-01.png",
+            "name": "Station Upload (graphic)",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/octet-stream",
+                "fileName": "/Users/jono/Pictures/SS-Sample-Images/dummy-doc.png"
+            },
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "image/png",
+                    "id": "pair_b40c33a79d1d4758a2ca615103cb28d1"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1666808367758,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_d8ccb1a372cb4cca8747ae7347e1c51e",
+            "parentId": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "modified": 1726595582485,
+            "created": 1714501878248,
+            "url": "{{ _.HOST }}/api/v1/station-upload/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}/audio/test-01.mp4",
+            "name": "Station Upload (audio)",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/octet-stream",
+                "fileName": "/Users/jono/Documents/Work/Clients/SoundSpace Analytics/audio POC/public/static/SWAG_FNIS-01-01_ICHF6155_KIW-CLL_20230717T101153Z_20230717T103142Z.mp4"
+            },
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "audio/mp4",
+                    "id": "pair_b40c33a79d1d4758a2ca615103cb28d1"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1666778235720.0566,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_5ad64f38a1794f658f849bfc9ef4732f",
+            "parentId": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "modified": 1726595602004,
+            "created": 1685806327698,
+            "url": "{{ _.HOST }}/api/v1/organization-upload/{{ _.ORGANIZATION_KEY }}/test/test-01.png",
+            "name": "Organization Upload",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/octet-stream",
+                "fileName": "/Users/jono/Pictures/SS-Sample-Images/dummy-doc.png"
+            },
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "image/png",
+                    "id": "pair_b40c33a79d1d4758a2ca615103cb28d1"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1666748103682.1133,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_fed2e7b634e34e05be51740d2a96a808",
+            "parentId": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "modified": 1726595610638,
+            "created": 1680030865672,
+            "url": "{{ _.HOST }}/api/v1/station-upload/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}/test/test-01.png",
+            "name": "Station Upload",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1666627575530.3398,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_be2718bb4680410eb53a672beba4132e",
+            "parentId": "fld_6ba320b9da494889be7d43c23cb3194f",
+            "modified": 1726595617731,
+            "created": 1685806492990,
+            "url": "{{ _.HOST }}/api/v1/organization-upload/{{ _.ORGANIZATION_KEY }}/test/test-01.png",
+            "name": "Organization Upload",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1666597443492.3965,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_97518ece7f0d4cab9f44605769fa7799",
+            "parentId": "fld_bc2154697d1145658b1a41a5e6a22924",
+            "modified": 1726595705949,
+            "created": 1680030865684,
+            "url": "{{ _.HOST }}/api/v1/organization/{{ _.ORGANIZATION_KEY }}",
+            "name": "Organization",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Test Org\",\n\t\"logoUrl\": null,\n\t\"metadata\": {\n\t\t\"test\": 1234,\n\t\t\"foo\": \"bar\"\n\t},\n\t\"password\": null\n}"
+            },
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1664949363046.75,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_bc2154697d1145658b1a41a5e6a22924",
+            "parentId": "wrk_384d8200299143ebb307cca0cdcf3509",
+            "modified": 1680030865680,
+            "created": 1680030865680,
+            "name": "Admin",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1666991108794,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_ef41ac88496147a7ac5009af9b55f626",
+            "parentId": "fld_bc2154697d1145658b1a41a5e6a22924",
+            "modified": 1726594107093,
+            "created": 1680030865682,
+            "url": "{{ _.HOST }}/api/v1/organization/{{ _.ORGANIZATION_KEY }}",
+            "name": "Organization",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1664949363043.625,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_607cf7a35b9f4fbda761f6e6b7145ed1",
+            "parentId": "fld_bc2154697d1145658b1a41a5e6a22924",
+            "modified": 1726595633071,
+            "created": 1680030865680,
+            "url": "{{ _.HOST }}/api/v1/user/{{ _.ORGANIZATION_KEY }}/test-user-01",
+            "name": "User",
+            "description": "Use this to create or cycle an API token",
+            "method": "PUT",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1664949363042.0625,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_f1bc0f0bda14447cafb94e003635693d",
+            "parentId": "fld_bc2154697d1145658b1a41a5e6a22924",
+            "modified": 1726595641735,
+            "created": 1680030865681,
+            "url": "{{ _.HOST }}/api/v1/user/{{ _.ORGANIZATION_KEY }}/test-user-01",
+            "name": "User",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}"
+            },
+            "metaSortKey": -1664949363041.2812,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_414de081423844b9956de093e3658482",
+            "parentId": "fld_bc2154697d1145658b1a41a5e6a22924",
+            "modified": 1680030865683,
+            "created": 1680030865683,
+            "url": "{{ _.HOST }}/api/v1/users",
+            "name": "Users",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": false
+            },
+            "metaSortKey": -1664949363041.086,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_690aa35476424058ae35a740fc5105f8",
+            "parentId": "fld_bc2154697d1145658b1a41a5e6a22924",
+            "modified": 1726597064414,
+            "created": 1681171721511,
+            "url": "{{ _.HOST }}/api/v1/rebuild-organization/{{ _.ORGANIZATION_KEY }}",
+            "name": "Rebuild Org",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [
+                {
+                    "id": "pair_1beaeae972da4fe8bfb13822baf25d13",
+                    "name": "",
+                    "value": "",
+                    "description": ""
+                }
+            ],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": false
+            },
+            "metaSortKey": -1663555109446.2715,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_7b91bfedf7fb4e71847696dbf92d6633",
+            "parentId": "fld_bc2154697d1145658b1a41a5e6a22924",
+            "modified": 1726594146978,
+            "created": 1714503463474,
+            "url": "{{ _.HOST }}/api/v1/rebuild-station/{{ _.ORGANIZATION_KEY }}/{{ _.STATION_KEY }}",
+            "name": "Rebuild Station",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [
+                {
+                    "id": "pair_1beaeae972da4fe8bfb13822baf25d13",
+                    "name": "",
+                    "value": "",
+                    "description": ""
+                }
+            ],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": false
+            },
+            "metaSortKey": -1663322733847.1357,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_cc256adcbd744cfb82b09d3fa75a8f83",
+            "parentId": "fld_bc2154697d1145658b1a41a5e6a22924",
+            "modified": 1726588273861,
+            "created": 1726588148703,
+            "url": "{{ _.HOST }}/api/v1/rebuild-all",
+            "name": "Rebuild All",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "preRequestScript": "",
+            "parameters": [
+                {
+                    "id": "pair_1beaeae972da4fe8bfb13822baf25d13",
+                    "name": "",
+                    "value": "",
+                    "description": ""
+                }
+            ],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{ _.ADMIN_API_KEY }}",
+                "disabled": false
+            },
+            "metaSortKey": -1663322733747.1357,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_d7e2163cdedb96c72c4c925eb1c2d8b96befdb1b",
+            "parentId": "wrk_384d8200299143ebb307cca0cdcf3509",
+            "modified": 1685807836735,
+            "created": 1685807671919,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": {},
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1685807671919,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_d7e2163cdedb96c72c4c925eb1c2d8b96befdb1b",
+            "parentId": "wrk_384d8200299143ebb307cca0cdcf3509",
+            "modified": 1685807671920,
+            "created": 1685807671920,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_f0b4bd1c33f742cbb6f918d5a15b27ce",
+            "parentId": "wrk_384d8200299143ebb307cca0cdcf3509",
+            "modified": 1685807671915,
+            "created": 1685807671915,
+            "fileName": "My Collection",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        },
+        {
+            "_id": "env_b7494476712e4f7b90a3446b68423d71",
+            "parentId": "env_d7e2163cdedb96c72c4c925eb1c2d8b96befdb1b",
+            "modified": 1726590612839,
+            "created": 1726588047606,
+            "name": "Test Station 01",
+            "data": {
+                "ADMIN_API_KEY": "<ENTER_YOUR_KEY_HERE>",
+                "HOST": "https://<ENTER_YOUR_WORKER_URL_HERE>",
+                "ORGANIZATION_KEY": "test-org",
+                "STATION_KEY": "test-station-01"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "ADMIN_API_KEY",
+                    "HOST",
+                    "ORGANIZATION_KEY",
+                    "STATION_KEY"
+                ]
+            },
+            "color": "#e7d513",
+            "isPrivate": false,
+            "metaSortKey": 1687299632314.25,
+            "_type": "environment"
+        }
+    ]
+}

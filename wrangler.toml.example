@@ -1,0 +1,31 @@
+main = "src/index.js"
+account_id = "<YOUR_CLOUDFLARE_ACCOUNT_ID>"
+compatibility_date = "2022-10-25"
+
+name = "seastats-api-dev"
+workers_dev = true
+vars = { ENVIRONMENT = "dev", CLIENT_URL = "https://your-dev-client-url.example.com/" }
+kv_namespaces = [
+    { binding = "CACHED_DATA", id = "<YOUR_DEV_STATION_DATA_KV_NAMESPACE_ID>", preview_id = "<YOUR_DEV_STATION_DATA_KV_NAMESPACE_ID>" }
+]
+r2_buckets  = [
+  { binding = "SOURCE_DATA", bucket_name = "seastats-api-dev", preview_bucket_name = "seastats-api-dev" }
+]
+#services = [
+#  { binding = "SELF", service = "seastats-api-dev" }
+#]
+
+[env.production]
+name = "seastats-api-prod"
+workers_dev = false
+route = "<YOUR_DOMAIN>/*"
+vars = { ENVIRONMENT = "production", CLIENT_URL = "https://your-client-url.example.com/", SENTRY_DSN = "<YOUR_SENTRY_DSN>" }
+kv_namespaces = [
+    { binding = "CACHED_DATA", id = "<YOUR_PROD_STATION_DATA_KV_NAMESPACE_ID>" }
+]
+r2_buckets  = [
+  { binding = "SOURCE_DATA", bucket_name = "seastats-api-prod" }
+]
+#services = [
+#  { binding = "SELF", service = "seastats-api-prod" }
+#]

@@ -1,0 +1,20 @@
+{
+  "name": "dashboard-api",
+  "version": "0.0.0",
+  "devDependencies": {
+    "jest": "^29.2.2",
+    "prettier": "2.8.4",
+    "wrangler": "^2.21.0"
+  },
+  "private": true,
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler publish",
+    "test": "jest"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3",
+    "itty-router": "^3.0.12",
+    "toucan-js": "^3.1.0"
+  }
+}
