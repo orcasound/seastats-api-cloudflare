@@ -93,6 +93,7 @@ export function castStation(object) {
     updated: toString(object.updated),
     online: toBoolean(object.online),
     logoUrl: toString(object.logoUrl),
+    audioVisualisation: toString(object.audioVisualisation),
     metadata: toObject(object.metadata),
     dataSummary: toArray(object.dataSummary, false, castDataSummary),
     uploadSummary: toArray(object.uploadSummary, false, castUploadSummary),
@@ -118,6 +119,7 @@ export function castCallEvent(object) {
     startDateTime: toDateTimeString(object.startDateTime),
     endDateTime: toDateTimeString(object.endDateTime),
     callCount: toInt(object.callCount),
+    audioUrl: toString(object.audioUrl),
   };
 }
 

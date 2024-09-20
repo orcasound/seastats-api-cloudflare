@@ -58,6 +58,11 @@ const dataPointValidators = {
       field: "callCount",
       validTypes: ["null", "number"],
     },
+    {
+      field: "audioUrl",
+      validTypes: ["null", "emptyString", "urlString"],
+      optional: true,
+    },
   ],
   recordingCoverage: [
     {
@@ -238,6 +243,13 @@ export function validateStationInput(station) {
     longitude: ["undefined", "longitude"],
     timeZone: ["undefined", "timeZoneAreaAndLocation"],
     logoUrl: ["undefined", "null", "emptyString", "urlString"],
+    audioVisualisation: [
+      "undefined",
+      "null",
+      "emptyString",
+      "string:spectrogram",
+      "string:waveform",
+    ],
     sidebarText: ["undefined", "null", "arrayOfLabelAndText"],
     metadata: ["undefined", "null", "object"],
   });

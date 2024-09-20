@@ -224,6 +224,7 @@ export default class Data {
       longitude,
       timeZone,
       logoUrl,
+      audioVisualisation,
       sidebarText,
       metadata,
     } = stationData;
@@ -244,6 +245,7 @@ export default class Data {
       longitude,
       timeZone,
       logoUrl,
+      audioVisualisation,
       sidebarText,
       metadata,
     });

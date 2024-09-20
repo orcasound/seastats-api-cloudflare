@@ -24,6 +24,7 @@ export function withId(dataPoint) {
     id: existingId,
     value,
     endDateTime,
+    audioUrl,
     callCount,
     ...candidates
   } = dataPoint;

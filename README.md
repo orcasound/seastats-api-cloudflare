@@ -28,7 +28,7 @@ We couldn't use KV as the sole storage solution due to its 'eventually consisten
 
 API requests that include an API key will always bypass the cache to ensure the most up-to-date data is returned.
 
-Uploaded files such as images are currently not cached in KV.
+Uploaded files such as images and audio are currently not cached in KV.
 
 ### Known issues and limitations
 
@@ -233,9 +233,9 @@ Example response:
 Upload a file for a particular organization.
 
 - API key required.
-- `FILE_PATH` is a filename that can optionally included `/` characters to denote a directory structure. Example: `logos/acme.png`
+- `FILE_PATH` is a filename that can optionally included `/` characters to denote a directory structure. Example: `audio/orca-sample.mp4`
 - Set the body of the request to the contents of the file being uploaded.
-- The `Content-Type` header should be set to the type of file being uploaded, for example `image/png` for a PNG image.
+- The `Content-Type` header should be set to the type of file being uploaded, for example `image/png` for a PNG image, or `audio/mp4` for an AAC audio file with a .mp4 file extension.
 
 ##### DELETE `/organization-upload/{ORGANIZATION_KEY}/{FILE_PATH}`
 
@@ -263,9 +263,9 @@ Example response:
   "cacheHit": true,
   "data": [
     {
-      "key": "test-org/logos/acme.png",
+      "key": "test-org/test-station-01/audio/orca-audio-sample.mp4",
       "uploaded": "2024-05-30T20:38:56.093Z",
-      "url": "https://example.com/api/v1/organization-upload/test-org/logos/acme.png"
+      "url": "https://example.com/api/v1/organization-upload/test-org/test-station-01/audio/orca-audio-sample.mp4"
     }
   ]
 }
@@ -338,15 +338,16 @@ Example response:
 
 JSON payload structure:
 
-| Key         | Type             | Description                                                                                                                                                                                                   |
-| ----------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name        | string           | (optional when updating) The name of the station                                                                                                                                                              |
-| latitude    | number           | (optional when updating) The latitude of the station                                                                                                                                                          |
-| longitude   | number           | (optional when updating) The longitude of the station                                                                                                                                                         |
-| timeZone    | string           | (optional when updating) The timezone of the station. Use a [TZ Database Name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) such as 'America/Vancouver' for lunar/daylight calculations etc. |
-| logoUrl     | null or string   | (optional) URL to an image to use as the logo for this station                                                                                                                                                |
-| sidebarText | array of objects | (optional) An array of objects with `label` and `text` properties to display in the sidebar of the dashboard                                                                                                  |
-| metadata    | null or object   | (optional) Any additional data you want to store                                                                                                                                                              |
+| Key                | Type             | Description                                                                                                                                                                                                   |
+| ------------------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name               | string           | (optional when updating) The name of the station                                                                                                                                                              |
+| latitude           | number           | (optional when updating) The latitude of the station                                                                                                                                                          |
+| longitude          | number           | (optional when updating) The longitude of the station                                                                                                                                                         |
+| timeZone           | string           | (optional when updating) The timezone of the station. Use a [TZ Database Name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) such as 'America/Vancouver' for lunar/daylight calculations etc. |
+| logoUrl            | null or string   | (optional) URL to an image to use as the logo for this station                                                                                                                                                |
+| audioVisualisation | string           | (optional) The type of audio visualisation to use for this station. Can be 'spectrogram' or 'waveform'                                                                                                        |
+| sidebarText        | array of objects | (optional) An array of objects with `label` and `text` properties to display in the sidebar of the dashboard                                                                                                  |
+| metadata           | null or object   | (optional) Any additional data you want to store                                                                                                                                                              |
 
 Example JSON payload:
 
@@ -357,6 +358,7 @@ Example JSON payload:
   "longitude": -126.70807,
   "timeZone": "America/Vancouver",
   "logoUrl": null,
+  "audioVisualisation": "spectrogram",
   "sidebarText": [
     {
       "label": "Region",
@@ -405,7 +407,7 @@ Upload a file for a particular station.
 - `UPLOAD_TYPE_KEY` is a unique string that represents the type of upload. It can only include letters, numbers and hyphens.
 - `FILE_PATH` is a filename that can optionally include `/` characters to denote a directory structure. Example: `audio/orca-sample.mp4`
 - Set the body of the request to the contents of the file being uploaded.
-- The `Content-Type` header should be set to the type of file being uploaded, for example `image/png` for a PNG image.
+- The `Content-Type` header should be set to the type of file being uploaded, for example `image/png` for a PNG image, or `audio/mp4` for an AAC audio file with a .mp4 file extension.
 
 ##### DELETE `/station-upload/{ORGANIZATION_KEY}/{STATION_KEY}/{UPLOAD_TYPE_KEY}/{FILE_PATH}`
 
@@ -550,6 +552,6 @@ Rclone can sync to a variety of destinations, including other cloud storage prov
 - Use a validation library such as JOI instead of custom code
 - Provide resampled versions of images suitable for user's screen
 - Make use of Cloudflare's cache API to set a TTL on requests that don't include an API key
-  - This should allow near-instantaneous subsequent JSON responses and faster image loading
+  - This should allow near-instantaneous subsequent JSON responses and faster image and audio loading
 - Better password-protection solution for organisation data
   - This currently is only a rudimentary implementation and potentially insecure.
