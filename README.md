@@ -552,4 +552,4 @@ Rclone can sync to a variety of destinations, including other cloud storage prov
 - Make use of Cloudflare's cache API to set a TTL on requests that don't include an API key
   - This should allow near-instantaneous subsequent JSON responses and faster image loading
 - Better password-protection solution for organisation data
-  - This was a late addition and very rudimentary and insecure.
+  - This currently is only a rudimentary implementation and potentially insecure.
